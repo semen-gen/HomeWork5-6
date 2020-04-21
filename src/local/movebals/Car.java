@@ -1,0 +1,77 @@
+package local.movebals;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Objects;
+
+public abstract class Car implements Movable {
+
+    protected String name;
+    protected int number;
+    protected String color;
+    protected Calendar dateRelease;
+    protected CarBrand brand;
+    protected boolean isRide;
+
+    public abstract boolean move();
+
+    public abstract boolean braking();
+
+    public Car(String name, int number, String color, int[] dateRelease, CarBrand brand) {
+        this.name = name;
+        this.number = number;
+        this.color = color;
+        this.dateRelease = new Calendar.Builder().setDate(dateRelease[2], dateRelease[1], dateRelease[0]).build();
+        this.brand = brand;
+        this.isRide = false;
+    }
+
+    private Car() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "\nname='" + name + '\'' +
+                ", \nnumber=" + number +
+                ", \ncolor='" + color + '\'' +
+                ", \ndateRelease=" + getDateRelease() +
+                ", \nbrand=" + brand +
+                ", \nisRide=" + isRide +
+                "\n}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return name.equals(car.name) &&
+                color.equals(car.color) &&
+                brand == car.brand;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, number, color, dateRelease, brand);
+    }
+
+    public String getDateRelease() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy");
+        return dateFormat.format(dateRelease.getTime());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public CarBrand getBrand() {
+        return brand;
+    }
+
+    public boolean isRide() {
+        return isRide;
+    }
+
+}
