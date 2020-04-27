@@ -12,6 +12,7 @@ public abstract class Car implements Movable {
     protected Calendar dateRelease;
     protected CarBrand brand;
     protected boolean isRide;
+    protected final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("d MMMM yyyy");
 
     public abstract boolean move();
 
@@ -60,8 +61,7 @@ public abstract class Car implements Movable {
     }
 
     public String getDateRelease() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy");
-        return dateFormat.format(dateRelease.getTime());
+        return DATE_FORMAT.format(dateRelease.getTime());
     }
 
     public String getName() {
