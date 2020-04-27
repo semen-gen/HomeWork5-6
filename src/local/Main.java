@@ -7,7 +7,7 @@ import java.util.Calendar;
 public class Main {
 
     public static void main(String[] args) {
-        Car i530 = new SportCar("530", 53, "Синий", new int[]{2, Calendar.JULY, 2019}, CarBrand.BMW,
+        Car i530 = new SportCar("530", 53, "Синий", 2, Calendar.JULY, 2019, CarBrand.BMW,
                 350, 3.8, 638);
         System.out.println("Данные по машине " + i530.getBrand().getNameRu() + " " + i530.getName());
         System.out.println("Кватер за: " + ((SportCar) i530).quarterTime());
@@ -20,7 +20,7 @@ public class Main {
         System.out.println('\n');
 
 
-        Car niva = new OffRoadCar("Niva 4x4", 2145, "Зелёный", new int[]{15, Calendar.AUGUST, 2003},
+        Car niva = new OffRoadCar("Niva 4x4", 2145, "Зелёный", 15, Calendar.AUGUST, 2003,
                 CarBrand.LADA, 29, 35, 180, 185);
         System.out.println("Данные по машине " + niva.getBrand().getNameRu() + " " + niva.getName());
         System.out.println("Преодолеет брод 150см: " + ((OffRoadCar) niva).fordDepth(150));

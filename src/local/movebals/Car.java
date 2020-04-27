@@ -18,11 +18,13 @@ public abstract class Car implements Movable {
 
     public abstract boolean braking();
 
-    public Car(String name, int number, String color, int[] dateRelease, CarBrand brand) {
+
+
+    public Car(String name, int number, String color, int day, int month, int year, CarBrand brand) {
         this.name = name;
         this.number = number;
         this.color = color;
-        this.dateRelease = new Calendar.Builder().setDate(dateRelease[2], dateRelease[1], dateRelease[0]).build();
+        this.dateRelease = new Calendar.Builder().setDate(year, month, day).build();
         this.brand = brand;
         this.isRide = false;
     }

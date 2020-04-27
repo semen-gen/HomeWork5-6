@@ -6,9 +6,9 @@ public class SportCar extends Car {
     private double upTo100;
     private int power;
 
-    public SportCar(String name, int number, String color, int[] dateRelease, CarBrand brand,
+    public SportCar(String name, int number, String color, int day, int month, int year, CarBrand brand,
                     int maxSpeed, double upTo100, int power) {
-        super(name, number, color, dateRelease, brand);
+        super(name, number, color, day, month, year, brand);
         this.maxSpeed = maxSpeed;
         this.upTo100 = upTo100;
         this.power = power;

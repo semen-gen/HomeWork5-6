@@ -8,9 +8,9 @@ public class OffRoadCar extends Car {
     private int width;
 
 
-    public OffRoadCar(String name, int number, String color, int[] dateRelease, CarBrand brand,
+    public OffRoadCar(String name, int number, String color, int day, int month, int year, CarBrand brand,
                       int clarence, int wheelSize, int height, int width) {
-        super(name, number, color, dateRelease, brand);
+        super(name, number, color, day, month, year, brand);
         this.clarence = clarence;
         this.wheelSize = wheelSize;
         this.height = height;
