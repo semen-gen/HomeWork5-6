@@ -56,10 +56,10 @@ public class SportCar extends Car {
     }
 
     public double accelerationMSS() {
-        double speedKmH = 100;
-        double secondsInHour = 3600;
-        double metersInKilometer = 1000;
-        return speedKmH * metersInKilometer / secondsInHour / upTo100;
+        final double SPEED_KM_H = 100;
+        final double SECONDS_IN_HOUR = 3600;
+        final double METERS_IN_KILOMETER = 1000;
+        return SPEED_KM_H * METERS_IN_KILOMETER / SECONDS_IN_HOUR / upTo100;
     }
 
     public double getUpTo100() {
