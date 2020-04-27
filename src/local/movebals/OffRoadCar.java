@@ -19,14 +19,12 @@ public class OffRoadCar extends Car {
 
     @Override
     public boolean move() {
-        isRide = true;
-        return true;
+        return isRide = true;
     }
 
     @Override
     public boolean braking() {
-        isRide = false;
-        return false;
+        return isRide = false;
     }
 
     public boolean canPassBetween(int width) {
