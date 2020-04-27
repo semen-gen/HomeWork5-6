@@ -32,14 +32,16 @@ public abstract class Car implements Movable {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "\nname='" + name + '\'' +
-                ", \nnumber=" + number +
-                ", \ncolor='" + color + '\'' +
-                ", \ndateRelease=" + getDateRelease() +
-                ", \nbrand=" + brand +
-                ", \nisRide=" + isRide +
-                "\n}";
+        StringBuilder output = new StringBuilder();
+        output.append("Car{")
+                .append("\nname='").append(name).append('\'')
+                .append(", \nnumber=").append(number)
+                .append(", \ncolor='").append(color).append('\'')
+                .append(", \ndateRelease=").append(getDateRelease())
+                .append(", \nbrand=").append(brand)
+                .append(", \nisRide=").append(isRide)
+                .append("\n}");
+        return output.toString();
     }
 
     @Override
