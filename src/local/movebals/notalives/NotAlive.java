@@ -1,4 +1,6 @@
-package local.movebals;
+package local.movebals.notalives;
+
+import local.movebals.Movable;
 
 import java.util.Objects;
 
@@ -9,11 +11,13 @@ public class NotAlive implements Movable {
     private String name;
     private int weight;
     private int minForceToMove;
+    private final int price;
 
-    public NotAlive(String name, int weight, int minForceToMove) {
+    public NotAlive(String name, int weight, int minForceToMove, int price) {
         this.name = name;
         this.weight = weight;
         this.minForceToMove = minForceToMove;
+        this.price = price;
     }
 
     public void printIsMove() {
@@ -78,6 +82,10 @@ public class NotAlive implements Movable {
 
     public void setMinForceToMove(int minForceToMove) {
         this.minForceToMove = minForceToMove;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
 }

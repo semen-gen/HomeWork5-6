@@ -1,4 +1,6 @@
-package local.movebals;
+package local.movebals.animals;
+
+import local.movebals.Movable;
 
 public class Animals implements Movable {
 
@@ -6,12 +8,14 @@ public class Animals implements Movable {
     private int legs;
     private boolean rideable;
     private boolean afraid;
+    private final int price;
 
-    public Animals(String name, int legs, boolean rideable) {
+    public Animals(String name, int legs, boolean rideable, int price) {
         this.name = name;
         this.legs = legs;
         this.rideable = rideable;
         afraid = false;
+        this.price = price;
     }
 
     public void toScare() {
@@ -57,6 +61,10 @@ public class Animals implements Movable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
 }

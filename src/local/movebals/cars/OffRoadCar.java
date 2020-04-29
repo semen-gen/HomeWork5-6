@@ -1,4 +1,4 @@
-package local.movebals;
+package local.movebals.cars;
 
 public class OffRoadCar extends Car {
 
@@ -6,15 +6,17 @@ public class OffRoadCar extends Car {
     private int wheelSize;
     private int height;
     private int width;
+    private final int price;
 
 
     public OffRoadCar(String name, int number, String color, int day, int month, int year, CarBrand brand,
-                      int clarence, int wheelSize, int height, int width) {
+                      int clarence, int wheelSize, int height, int width, int price) {
         super(name, number, color, day, month, year, brand);
         this.clarence = clarence;
         this.wheelSize = wheelSize;
         this.height = height;
         this.width = width;
+        this.price = price;
     }
 
     @Override
@@ -65,6 +67,10 @@ public class OffRoadCar extends Car {
 
     public void setWidth(int width) {
         this.width = width;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
 }

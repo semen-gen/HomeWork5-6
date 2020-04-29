@@ -1,4 +1,6 @@
-package local.movebals;
+package local.movebals.cars;
+
+import local.movebals.Movable;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

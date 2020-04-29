@@ -1,17 +1,19 @@
-package local.movebals;
+package local.movebals.cars;
 
 public class SportCar extends Car {
 
     private int maxSpeed;
     private double upTo100;
     private int power;
+    private final int price;
 
     public SportCar(String name, int number, String color, int day, int month, int year, CarBrand brand,
-                    int maxSpeed, double upTo100, int power) {
+                    int maxSpeed, double upTo100, int power, int price) {
         super(name, number, color, day, month, year, brand);
         this.maxSpeed = maxSpeed;
         this.upTo100 = upTo100;
         this.power = power;
+        this.price = price;
     }
 
     @Override
@@ -76,6 +78,10 @@ public class SportCar extends Car {
 
     public void setPower(int power) {
         this.power = power;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
 }
