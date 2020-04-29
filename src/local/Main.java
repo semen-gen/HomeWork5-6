@@ -1,12 +1,15 @@
 package local;
 
+import local.movebals.Movable;
 import local.movebals.animals.Animals;
 import local.movebals.cars.Car;
 import local.movebals.cars.CarBrand;
 import local.movebals.cars.OffRoadCar;
 import local.movebals.cars.SportCar;
 import local.movebals.notalives.NotAlive;
+import local.store.Store;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class Main {
@@ -58,6 +61,17 @@ public class Main {
         stone.printIsMove(60);
         stone.printIsMove();
         System.out.println(stone);
+
+        System.out.println("===================");
+        Movable[] test = new SportCar[]{(SportCar) i530};
+        Store<Movable> topGear = new Store<>(test);
+
+
+
+//        System.out.println(Arrays.toString(topGear.getInStock()));
+        System.out.println(topGear.getCashBox());
+
+
     }
 
 }
