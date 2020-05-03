@@ -8,4 +8,8 @@ public interface Movable {
         return "Default getName";
     }
 
+    default int getPrice() {
+        return 0;
+    }
+
 }

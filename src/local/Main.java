@@ -68,8 +68,18 @@ public class Main {
         SportCar tesla = new SportCar("X 90D 2017", 902017, "Красный", 3, Calendar.JULY, 2017, CarBrand.TESLA,
                 250, 4.9, 525, 100000);
 
+        System.out.println("Денег в кассе");
         System.out.println(topGear.getCashBox());
+        System.out.println();
+
+        System.out.println("Товары в магазине");
         topGear.printProducts();
+        System.out.println();
+
+        System.out.println("Преобретение товара");
+        topGear.purchase(0, 800000);
+        System.out.println();
+
 
 
     }

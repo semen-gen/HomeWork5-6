@@ -27,17 +27,31 @@ public class Store<M extends Movable> {
 
     public void printProducts() {
         for (int i = 0; i < inStock.length; i++) {
-            System.out.println(i + ": "+ inStock[i].getName());
+            System.out.println(i + ": " + inStock[i].getName() + ", цена: " + inStock[i].getPrice());
         }
+        if (inStock == null || inStock.length == 0) {
+            System.out.println("В магазине нет товара");
+        }
+    }
 
+    public void purchase(int productIndex, int amountMoney) {
+        if (productIndex <= inStock.length) {
+            if (amountMoney >= getPriceByIndex(productIndex)) {
+                cashBox += getPriceByIndex(productIndex);
+                popProduct(productIndex);
+                System.out.println("Товар преобретён");
+            }
+            else {
+                System.out.println("Недостаточно денег");
+            }
+        }
+        else {
+            System.out.println("Такого товара не существует");
+        }
     }
 
     public M[] getInStock() {
         return inStock;
-    }
-
-    public void addInStock(M product) {
-
     }
 
     public int getCashBox() {
@@ -46,6 +60,35 @@ public class Store<M extends Movable> {
 
     public void setCashBox(int cashBox) {
         this.cashBox = cashBox;
+    }
+
+
+    private int getPriceByIndex(int index) {
+        return inStock[index].getPrice();
+    }
+
+    private void popProduct(int index) {
+        int newLength = inStock.length - 1;
+        M[] tempArray = (M[]) new Movable[newLength];
+
+        for (int i = 0, n = 0; i < inStock.length; i++, n++) {
+            if (i == index) {
+                n--;
+                continue;
+            }
+            tempArray[n] = inStock[i];
+        }
+        inStock = tempArray;
+    }
+
+    private void pushProduct(M product) {
+        int newLength = inStock.length + 1;
+        M[] tempArray = (M[]) new Movable[newLength];
+
+        for (int i = 0; i < inStock.length; i++) tempArray[i] = inStock[i];
+
+        tempArray[inStock.length] = product;
+        inStock = tempArray;
     }
 
 }
