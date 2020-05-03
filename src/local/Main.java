@@ -63,13 +63,13 @@ public class Main {
         System.out.println(stone);
 
         System.out.println("===================");
-        Movable[] test = new SportCar[]{(SportCar) i530};
-        Store<Movable> topGear = new Store<>(test);
+        SportCar[] test = new SportCar[]{(SportCar) i530};
+        Store<SportCar> topGear = new Store<>(test);
+        SportCar tesla = new SportCar("X 90D 2017", 902017, "Красный", 3, Calendar.JULY, 2017, CarBrand.TESLA,
+                250, 4.9, 525, 100000);
 
-
-
-//        System.out.println(Arrays.toString(topGear.getInStock()));
         System.out.println(topGear.getCashBox());
+        topGear.printProducts();
 
 
     }

@@ -25,6 +25,13 @@ public class Store<M extends Movable> {
         else cashBox = 10_000;
     }
 
+    public void printProducts() {
+        for (int i = 0; i < inStock.length; i++) {
+            System.out.println(i + ": "+ inStock[i].getName());
+        }
+
+    }
+
     public M[] getInStock() {
         return inStock;
     }
