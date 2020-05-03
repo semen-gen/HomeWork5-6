@@ -37,9 +37,10 @@ public class Store<M extends Movable> {
     public void purchase(int productIndex, int amountMoney) {
         if (productIndex <= inStock.length) {
             if (amountMoney >= getPriceByIndex(productIndex)) {
+                M product = inStock[productIndex];
                 cashBox += getPriceByIndex(productIndex);
                 popProduct(productIndex);
-                System.out.println("Товар преобретён");
+                System.out.println("Вы преобрели " + product.getName() + " у магазина за " + product.getPrice());
             }
             else {
                 System.out.println("Недостаточно денег");
@@ -48,6 +49,25 @@ public class Store<M extends Movable> {
         else {
             System.out.println("Такого товара не существует");
         }
+    }
+
+    public void sell(M product, int coast) {
+        int commissionStore = 10;
+        int sellCost = product.getPrice() - product.getPrice() * commissionStore / 100;
+        if (coast <= sellCost) {
+            if (coast <= cashBox) {
+                cashBox -= coast;
+                pushProduct(product);
+                System.out.println("Магазин купил " + product.getName() + " за " + coast);
+            }
+            else {
+                System.out.println("Не хватает денег в кассе. Перезвоните позже :-)");
+            }
+        }
+        else {
+            System.out.println("Предложите цену ниже");
+        }
+
     }
 
     public M[] getInStock() {

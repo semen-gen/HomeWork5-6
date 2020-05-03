@@ -80,6 +80,15 @@ public class Main {
         topGear.purchase(0, 800000);
         System.out.println();
 
+        topGear.sell(tesla, 90000);
+        System.out.println("Денег в кассе");
+        System.out.println(topGear.getCashBox());
+        System.out.println();
+
+        System.out.println("Товары в магазине");
+        topGear.printProducts();
+        System.out.println();
+
 
 
     }
