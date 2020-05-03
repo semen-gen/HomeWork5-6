@@ -90,6 +90,10 @@ public class Main {
         System.out.println();
 
 
+        System.out.println(hare.getName());
+        System.out.println(hare.getPrice());
+        hare.setState(true, true);
+        System.out.println(hare.getPrice());
 
     }
 
