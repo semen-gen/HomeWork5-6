@@ -9,14 +9,6 @@ public class Store<M extends Movable> {
     private M[] inStock;
     private int cashBox;
 
-    public Store(M product) {
-        inStock = (M[]) new Movable[]{product};
-        if (product instanceof SportCar) cashBox = 1_000_000;
-        else if (product instanceof OffRoadCar) cashBox = 100_000;
-        else if (product instanceof Car) cashBox = 50_000;
-        else cashBox = 10_000;
-    }
-
     public Store(M[] products) {
         inStock = products;
         if (products instanceof SportCar[]) cashBox = 1_000_000;
