@@ -18,11 +18,13 @@ public class MovableStore<M extends Movable> {
     }
 
     public void printProducts() {
-        for (int i = 0; i < inStock.length; i++) {
-            System.out.println(i + ": " + inStock[i].getName() + ", цена: " + inStock[i].getPrice());
-        }
         if (inStock == null || inStock.length == 0) {
             System.out.println("В магазине нет товара");
+        }
+        else {
+            for (int i = 0; i < inStock.length; i++) {
+                System.out.println(i + ": " + inStock[i].getName() + ", цена: " + inStock[i].getPrice());
+            }
         }
     }
 
