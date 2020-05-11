@@ -27,21 +27,22 @@ public class MovableStore<P extends Purchasable> {
         }
     }
 
-    public void purchase(int productIndex, int amountMoney) {
+    public P purchase(int productIndex, int amountMoney) {
+        P product = null;
         if (productIndex <= inStock.length) {
             if (amountMoney >= getPriceByIndex(productIndex)) {
-                P product = inStock[productIndex];
-                cashBox += getPriceByIndex(productIndex);
-                popProduct(productIndex);
-                System.out.println("Вы преобрели " + product.getName() + " у магазина за " + product.getPrice());
+                product = popProduct(productIndex);
+                cashBox += product.getPrice();
+                printResultPurchase("Вы преобрели " + product.getName() + " у магазина за " + product.getPrice());
             }
             else {
-                System.out.println("Недостаточно денег");
+                printResultPurchase("Недостаточно денег");
             }
         }
         else {
-            System.out.println("Такого товара не существует");
+            printResultPurchase("Такого товара не существует");
         }
+        return product;
     }
 
     public void sell(P product, int coast) {
@@ -76,13 +77,18 @@ public class MovableStore<P extends Purchasable> {
     }
 
 
+    private void printResultPurchase(String str) {
+        System.out.println(str);
+    }
+
     private int getPriceByIndex(int index) {
         return inStock[index].getPrice();
     }
 
-    private void popProduct(int index) {
+    private P popProduct(int index) {
         int newLength = inStock.length - 1;
         P[] tempArray = (P[]) new Purchasable[newLength];
+        P product = inStock[index];
 
         for (int i = 0, n = 0; i < inStock.length; i++, n++) {
             if (i == index) {
@@ -92,6 +98,7 @@ public class MovableStore<P extends Purchasable> {
             tempArray[n] = inStock[i];
         }
         inStock = tempArray;
+        return product;
     }
 
     private void pushProduct(P product) {
