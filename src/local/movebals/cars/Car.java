@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public abstract class Car implements Movable {
 
+    protected int price;
     protected String name;
     protected int number;
     protected String color;

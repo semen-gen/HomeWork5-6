@@ -5,7 +5,6 @@ public class SportCar extends Car {
     private int maxSpeed;
     private double upTo100;
     private int power;
-    private final int price;
 
     public SportCar(String name, int number, String color, int day, int month, int year, CarBrand brand,
                     int maxSpeed, double upTo100, int power, int price) {

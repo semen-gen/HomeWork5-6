@@ -6,7 +6,6 @@ public class OffRoadCar extends Car {
     private int wheelSize;
     private int height;
     private int width;
-    private final int price;
 
 
     public OffRoadCar(String name, int number, String color, int day, int month, int year, CarBrand brand,
