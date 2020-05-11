@@ -1,15 +1,13 @@
 package local;
 
-import local.movebals.Movable;
 import local.movebals.animals.Animals;
 import local.movebals.cars.Car;
 import local.movebals.cars.CarBrand;
 import local.movebals.cars.OffRoadCar;
 import local.movebals.cars.SportCar;
 import local.movebals.notalives.NotAlive;
-import local.store.Store;
+import local.store.MovableStore;
 
-import java.util.Arrays;
 import java.util.Calendar;
 
 public class Main {
@@ -64,7 +62,7 @@ public class Main {
 
         System.out.println("===================");
         SportCar[] test = new SportCar[]{(SportCar) i530};
-        Store<SportCar> topGear = new Store<>(test);
+        MovableStore<SportCar> topGear = new MovableStore<>(test);
         SportCar tesla = new SportCar("X 90D 2017", 902017, "Красный", 3, Calendar.JULY, 2017, CarBrand.TESLA,
                 250, 4.9, 525, 100000);
 

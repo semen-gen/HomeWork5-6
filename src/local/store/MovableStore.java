@@ -4,12 +4,12 @@ import local.movebals.Movable;
 import local.movebals.cars.*;
 
 
-public class Store<M extends Movable> {
+public class MovableStore<M extends Movable> {
 
     private M[] inStock;
     private int cashBox;
 
-    public Store(M[] products) {
+    public MovableStore(M[] products) {
         inStock = products;
         if (products instanceof SportCar[]) cashBox = 1_000_000;
         else if (products instanceof OffRoadCar[]) cashBox = 100_000;
