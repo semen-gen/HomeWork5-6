@@ -1,8 +1,9 @@
 package local.movebals.animals;
 
 import local.movebals.Movable;
+import local.store.Purchasable;
 
-public class Animals implements Movable {
+public class Animals implements Movable, Purchasable {
 
     public Rideable rState;
     public Unrideable unRState;

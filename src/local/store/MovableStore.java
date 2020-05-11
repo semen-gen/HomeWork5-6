@@ -1,15 +1,14 @@
 package local.store;
 
-import local.movebals.Movable;
 import local.movebals.cars.*;
 
 
-public class MovableStore<M extends Movable> {
+public class MovableStore<P extends Purchasable> {
 
-    private M[] inStock;
+    private P[] inStock;
     private int cashBox;
 
-    public MovableStore(M[] products) {
+    public MovableStore(P[] products) {
         inStock = products;
         if (products instanceof SportCar[]) cashBox = 1_000_000;
         else if (products instanceof OffRoadCar[]) cashBox = 100_000;
@@ -31,7 +30,7 @@ public class MovableStore<M extends Movable> {
     public void purchase(int productIndex, int amountMoney) {
         if (productIndex <= inStock.length) {
             if (amountMoney >= getPriceByIndex(productIndex)) {
-                M product = inStock[productIndex];
+                P product = inStock[productIndex];
                 cashBox += getPriceByIndex(productIndex);
                 popProduct(productIndex);
                 System.out.println("Вы преобрели " + product.getName() + " у магазина за " + product.getPrice());
@@ -45,7 +44,7 @@ public class MovableStore<M extends Movable> {
         }
     }
 
-    public void sell(M product, int coast) {
+    public void sell(P product, int coast) {
         int commissionStore = 10;
         int sellCost = product.getPrice() - product.getPrice() * commissionStore / 100;
         if (coast <= sellCost) {
@@ -64,7 +63,7 @@ public class MovableStore<M extends Movable> {
 
     }
 
-    public M[] getInStock() {
+    public P[] getInStock() {
         return inStock;
     }
 
@@ -83,7 +82,7 @@ public class MovableStore<M extends Movable> {
 
     private void popProduct(int index) {
         int newLength = inStock.length - 1;
-        M[] tempArray = (M[]) new Movable[newLength];
+        P[] tempArray = (P[]) new Purchasable[newLength];
 
         for (int i = 0, n = 0; i < inStock.length; i++, n++) {
             if (i == index) {
@@ -95,9 +94,9 @@ public class MovableStore<M extends Movable> {
         inStock = tempArray;
     }
 
-    private void pushProduct(M product) {
+    private void pushProduct(P product) {
         int newLength = inStock.length + 1;
-        M[] tempArray = (M[]) new Movable[newLength];
+        P[] tempArray = (P[]) new Purchasable[newLength];
 
         for (int i = 0; i < inStock.length; i++) tempArray[i] = inStock[i];
 

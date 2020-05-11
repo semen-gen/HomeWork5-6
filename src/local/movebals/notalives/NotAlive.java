@@ -1,10 +1,11 @@
 package local.movebals.notalives;
 
 import local.movebals.Movable;
+import local.store.Purchasable;
 
 import java.util.Objects;
 
-public class NotAlive implements Movable {
+public class NotAlive implements Movable, Purchasable {
 
     public int force;
 

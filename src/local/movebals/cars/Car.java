@@ -1,12 +1,13 @@
 package local.movebals.cars;
 
 import local.movebals.Movable;
+import local.store.Purchasable;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
-public abstract class Car implements Movable {
+public abstract class Car implements Movable, Purchasable {
 
     protected int price;
     protected String name;
