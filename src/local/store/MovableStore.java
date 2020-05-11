@@ -29,7 +29,7 @@ public class MovableStore<P extends Purchasable> {
 
     public P purchase(int productIndex, int amountMoney) {
         P product = null;
-        if (productIndex <= inStock.length) {
+        if (productIndex < inStock.length) {
             if (amountMoney >= getPriceByIndex(productIndex)) {
                 product = popProduct(productIndex);
                 cashBox += product.getPrice();
