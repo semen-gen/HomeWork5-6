@@ -8,12 +8,9 @@ public class MovableStore<T extends Purchasable> {
     private T[] inStock;
     private int cashBox;
 
-    public MovableStore(T[] products) {
+    public MovableStore(T[] products, int cashBox) {
         inStock = products;
-        if (products instanceof SportCar[]) cashBox = 1_000_000;
-        else if (products instanceof OffRoadCar[]) cashBox = 100_000;
-        else if (products instanceof Car[]) cashBox = 50_000;
-        else cashBox = 10_000;
+        this.cashBox = cashBox;
     }
 
     public void printProducts() {

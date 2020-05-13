@@ -62,7 +62,7 @@ public class Main {
 
         System.out.println("===================");
         SportCar[] test = new SportCar[]{(SportCar) i530};
-        MovableStore<SportCar> topGear = new MovableStore<>(test);
+        MovableStore<SportCar> topGear = new MovableStore<>(test, 1_000_000);
         SportCar tesla = new SportCar("X 90D 2017", 902017, "Красный", 3, Calendar.JULY, 2017, CarBrand.TESLA,
                 250, 4.9, 525, 100000);
 
